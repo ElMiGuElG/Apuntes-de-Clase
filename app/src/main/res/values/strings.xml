@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Application #1</string>
+    <string name="User">Users</string>
+    <string name="btn1">Ingresar</string>
+    <string name="btn2">Login</string>
+
 </resources>
