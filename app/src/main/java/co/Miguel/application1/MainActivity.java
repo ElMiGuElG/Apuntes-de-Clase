@@ -2,6 +2,7 @@ package co.Miguel.application1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,24 +10,16 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
-    String name = "Bob";
-    int num1 = 10;   // positive value
-    int num2 = -5;   // negative value
-    int num3 = 0;    // zero value
-    int age = 28;
-    char grade = 'A';
-
     TextView nombreUser;
-    Button btn1, btn2;
+    Button btn1, btn2, btnEnviar;
     String Tag = "Prueba";
-
     boolean late = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         nombreUser = (TextView) findViewById(R.id.Usuario);
         nombreUser.setText("Estoy en Oncreate");
     }
@@ -40,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
         nombreUser = (TextView) findViewById(R.id.Usuario);
         btn1 = findViewById(R.id.btn1);
         btn2 = findViewById(R.id.btn2);
+        btnEnviar = findViewById(R.id.btnEnviar);
+
+        nombreUser.setText("Estoy en OnStart");
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +48,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 nombreUser.setText("Soy Boton 2");
+            }
+        });
+        btnEnviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String Texto = nombreUser.getText().toString();
+                String Nombre = "Pepito Perez";
+                Intent Enviar = new Intent(getApplicationContext(), Activity_2.class);
+                Enviar.putExtra("Name",Nombre);
+                startActivity(Enviar);
             }
         });
 
@@ -70,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         Log.i(Tag, "Estoy en OnPause");
         setContentView(R.layout.activity_main);
+
         nombreUser = (TextView) findViewById(R.id.Usuario);
         nombreUser.setText("Estoy en OnPause");
     }
@@ -79,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
         Log.i(Tag, "Estoy en OnStop");
         setContentView(R.layout.activity_main);
+
         nombreUser = (TextView) findViewById(R.id.Usuario);
         nombreUser.setText("Estoy en OnStop");
 
@@ -89,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         Log.i(Tag, "Estoy en OnDestroy");
         setContentView(R.layout.activity_main);
+
         nombreUser = (TextView) findViewById(R.id.Usuario);
         nombreUser.setText("Estoy en OnDestroy");
     }
