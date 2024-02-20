@@ -17,11 +17,11 @@
             android:id="@+id/Usuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/User"
-            android:textSize="30sp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            />
+            android:text="@string/User"
+            android:textSize="30sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,8 +38,8 @@
                 android:id="@+id/btn2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/btn2"
-                android:layout_marginStart="20dp"/>
+                android:layout_marginStart="20dp"
+                android:text="@string/btn2" />
 
         </LinearLayout>
 
@@ -47,9 +47,38 @@
             android:id="@+id/btnEnviar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/enviar"
             android:layout_marginTop="35dp"
-            />
+            android:text="@string/enviar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnAlarma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/alarma" />
+
+            <Button
+                android:id="@+id/btnCalendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/calendar" />
+
+            <Button
+                android:id="@+id/btnMapa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/mapa" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
