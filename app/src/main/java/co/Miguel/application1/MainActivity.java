@@ -29,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         Log.i(Tag, "Estoy en OnStart");
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setContentView(R.layout.activity_main);
+
+        nombreUser = (TextView) findViewById(R.id.Usuario);
+        nombreUser.setText("Estoy en OnResume");
+
 
         nombreUser = (TextView) findViewById(R.id.Usuario);
         btn1 = findViewById(R.id.btn1);
@@ -53,22 +63,12 @@ public class MainActivity extends AppCompatActivity {
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String Texto = nombreUser.getText().toString();
                 String Nombre = "Pepito Perez";
-                Intent Enviar = new Intent(getApplicationContext(), Activity_2.class);
-                Enviar.putExtra("Name",Nombre);
-                startActivity(Enviar);
+                Intent intent = new Intent(getApplicationContext(), Activity_2.class); //getApplicationContext()
+                intent.putExtra("name",Nombre);
+                startActivity(intent);
             }
         });
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        setContentView(R.layout.activity_main);
-        nombreUser = (TextView) findViewById(R.id.Usuario);
-        nombreUser.setText("Estoy en OnResume");
     }
 
     @Override

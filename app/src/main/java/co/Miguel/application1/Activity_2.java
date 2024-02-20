@@ -16,7 +16,7 @@ public class Activity_2 extends AppCompatActivity {
         tvNombre = findViewById(R.id.tvNombre);
         tvPantalla = findViewById(R.id.tvPantalla);
 
-        String Name = getIntent().getStringExtra("Name");
+        String Name = getIntent().getStringExtra("name");
         tvNombre.setText(Name);
     }
 }
